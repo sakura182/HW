@@ -1,15 +1,64 @@
 package metrics;
 
-import org.eclipse.jdt.core.dom.ASTVisitor;
-import org.eclipse.jdt.core.dom.ITypeBinding;
-import org.eclipse.jdt.core.dom.IVariableBinding;
-import org.eclipse.jdt.core.dom.QualifiedName;
+import org.eclipse.jdt.core.dom.*;
 
-public class AccessToForeignData extends ASTVisitor {
-    private ITypeBinding currentClass;
+import java.util.ArrayList;
 
-    public AccessToForeignData(ITypeBinding currentClass){
+public class AccessToForeignData extends Metric {
+    private TypeDeclaration currentClass;
+
+    public AccessToForeignData(TypeDeclaration currentClass){
+        super();
         this.currentClass = currentClass;
+        name = "ATFD";
+    }
+
+    @Override
+    public void calculate() {
+        ITypeBinding typeBinding = currentClass.resolveBinding();
+        if(typeBinding==null) return ;
+        result.put(name,new Double(0.0));
+        AccessToForeignDataVisitor visitor = new AccessToForeignDataVisitor(typeBinding);
+        currentClass.accept(visitor);
+        result.put(name,Double.valueOf(visitor.getAtfd()));
+    }
+}
+
+class AccessToForeignDataVisitor extends ASTVisitor{
+    private ITypeBinding currentClass;
+    private ArrayList<IBinding> havaAccess;
+    private int atfd;
+    private IBinding vField;
+
+    public AccessToForeignDataVisitor(ITypeBinding currentClass){
+        this.currentClass = currentClass;
+        havaAccess = new ArrayList<IBinding>();
+        atfd=0;
+        vField = null;
+    }
+
+    public boolean visit(PackageDeclaration node){
+        return false;
+    }
+
+    public boolean visit(ImportDeclaration node){
+        return false;
+    }
+
+    public boolean visit(FieldDeclaration node){
+        return false;
+    }
+
+    public boolean visit(SuperFieldAccess node){
+        return false;
+    }
+
+    public boolean visit(SuperConstructorInvocation node){
+        return false;
+    }
+
+    public boolean visit(SuperMethodInvocation node){
+        return false;
     }
 
     public boolean visit(QualifiedName node){
@@ -20,23 +69,9 @@ public class AccessToForeignData extends ASTVisitor {
                 if(typeBinding == null)
                     return true;
                 if(!typeBinding.equals(currentClass)){
-                    for(String srcPackage : srcPackages){
-                        if((!havaAccess.contains(node.resolveBinding()))&&srcPackage.equals(typeBinding.getPackage().getName())){
-                            havaAccess.add(node.resolveBinding());
-                            //luohui
-                            //System.out.println("--------------------------luohui----------------------------------");
-                            //System.out.println(typeBinding.getQualifiedName());
-                            set.add(typeBinding.getQualifiedName());
-                            //luohui
-                            try {
-                                if ((((IField)variableBinding.getJavaElement()).getFlags()& Flags.AccFinal) == 0)//(node.getFlags()& Flags.AccFinal )== 0)
-                                    tipos++;
-                            } catch (JavaModelException e) {
-                                // TODO Auto-generated catch block
-                                e.printStackTrace();
-                            }
-                            break;
-                        }
+                    if(!havaAccess.contains(node.resolveBinding())){
+                        havaAccess.add(node.resolveBinding());
+                        atfd++;
                     }
                 }
             }
@@ -53,23 +88,9 @@ public class AccessToForeignData extends ASTVisitor {
         if(typeBinding == null)
             return true;
         if(!typeBinding.equals(currentClass)){
-            for(String srcPackage : srcPackages){
-                if((!havaAccess.contains(node.resolveFieldBinding()))&&srcPackage.equals(typeBinding.getPackage().getName())){
-                    havaAccess.add(node.resolveFieldBinding());
-                    //luohui
-                    //System.out.println("--------------------------luohui----------------------------------");
-                    //System.out.println(typeBinding.getQualifiedName());
-                    set.add(typeBinding.getQualifiedName());
-                    //luohui
-                    try {
-                        if ((((IField)node.resolveFieldBinding().getJavaElement()).getFlags()& Flags.AccFinal) == 0)
-                            tipos++;
-                    } catch (JavaModelException e) {
-                        // TODO Auto-generated catch block
-                        //				e.printStackTrace();
-                    }
-                    break;
-                }
+            if(!havaAccess.contains(node.resolveFieldBinding())){
+                havaAccess.add(node.resolveFieldBinding());
+                atfd++;
             }
         }
         return true;
@@ -81,17 +102,9 @@ public class AccessToForeignData extends ASTVisitor {
             if(typeBinding == null)
                 return true;
             if(!typeBinding.equals(currentClass)){
-                for(String srcPackage : srcPackages){
-                    if(vField!=null&&(!havaAccess.contains(vField))&&srcPackage.equals(typeBinding.getPackage().getName())){
-                        havaAccess.add(vField);
-                        //luohui
-                        //System.out.println("--------------------------luohui----------------------------------");
-                        //System.out.println(typeBinding.getQualifiedName());
-                        set.add(typeBinding.getQualifiedName());
-                        //luohui
-                        tipos++;
-                        break;
-                    }
+                if(vField!=null&&!havaAccess.contains(vField)){
+                    havaAccess.add(vField);
+                    atfd++;
                 }
             }
 
@@ -99,4 +112,41 @@ public class AccessToForeignData extends ASTVisitor {
         return true;
     }
 
+    private  boolean isGetterOrSetter(MethodInvocation node){
+        IMethodBinding binding = node.resolveMethodBinding();
+        if(binding==null)
+            return false;
+        String methodName = binding.getName();
+        if(methodName.length() <= 3)
+            return false;
+        if(methodName.startsWith("get")){
+            String targetField = methodName.substring(3);
+            IVariableBinding[] fields = node.resolveMethodBinding().getDeclaringClass().getDeclaredFields();
+            for(IVariableBinding field : fields){
+                if(field.getName().equalsIgnoreCase(targetField) && field.getType().equals(node.resolveMethodBinding().getReturnType()))
+                {
+                    vField = field;
+                    return true;
+                }
+            }
+        }
+        if(methodName.startsWith("set")){
+            String targetField = methodName.substring(3);
+            IVariableBinding[] fields = node.resolveMethodBinding().getDeclaringClass().getDeclaredFields();
+            for(IVariableBinding field : fields)
+                if(field.getName().equalsIgnoreCase(targetField)){
+                    ITypeBinding[] parameterTypes = node.resolveMethodBinding().getParameterTypes();
+                    if(parameterTypes.length == 1 && field.getType().equals(parameterTypes[0]))
+                    {
+                        vField = field;
+                        return true;
+                    }
+                }
+        }
+        return false;
+    }
+
+    public int getAtfd() {
+        return atfd;
+    }
 }

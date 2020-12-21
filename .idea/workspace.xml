@@ -5,13 +5,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/GodClassEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/GodClassEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/metrics/AccessToForeignData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/metrics/AccessToForeignData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/parser/GodClassParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parser/GodClassParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/parser/ProjectsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parser/ProjectsParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/parser/GodClassParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/parser/GodClassParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entity/GodClassEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entity/GodClassEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/parser/GodClassParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/parser/GodClassParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/parser/ProjectsParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/parser/ProjectsParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/parser/GodClassParserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/parser/GodClassParserTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/Utils.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,73 +23,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ProjectsParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/parser/ProjectsParser.java">
+      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/utils/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+            <state relative-caret-position="207">
+              <caret line="9" column="272" selection-start-line="9" selection-start-column="272" selection-end-line="9" selection-end-column="272" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#ProjectsParser#0;class#ProjectsParser#0" />
-                <element signature="method#traverseJavaFile#0;class#ProjectsParser#0" />
+                <element signature="method#getSourceTypeNames#0;class#Utils#0" />
+                <element signature="e#804#812#0" expanded="true" />
+                <element signature="e#2326#2336#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GodClassParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/parser/GodClassParser.java">
+      <file leaf-file-name="NumberofAttributes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/metrics/NumberofAttributes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+            <state relative-caret-position="301">
+              <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#GodClassParser#0;class#GodClassParser#0" />
+                <element signature="e#607#615#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GodClassParserTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/parser/GodClassParserTest.java">
+      <file leaf-file-name="NumberOfMethods.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/metrics/NumberOfMethods.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="90" selection-start-line="8" selection-start-column="90" selection-end-line="8" selection-end-column="90" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GodClassEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/entity/GodClassEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+            <state relative-caret-position="539">
+              <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#616#624#0" expanded="true" />
+                <element signature="e#681#689#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccessToForeignData.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/metrics/AccessToForeignData.java">
+      <file leaf-file-name="DITTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/metrics/DITTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+            <state relative-caret-position="284">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#357#358#0" expanded="true" />
-                <element signature="e#376#377#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -103,6 +85,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>flag</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -124,16 +111,29 @@
         <option value="$PROJECT_DIR$/src/main/java/ProjectsParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/data/GodClassEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/Entity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/SmellEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/visitor/GodClassVisitor.java" />
         <option value="$PROJECT_DIR$/src/main/java/parser/ProjectsParser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/utils/Utils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/parser/GodClassParser.java" />
         <option value="$PROJECT_DIR$/src/test/java/parser/GodClassParserTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/GodClassEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/metrics/Access.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/parser/GodClassParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/SmellEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/metrics/AccessToForeignData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/metrics/CohesionAmongMethodsOfClass.java" />
+        <option value="$PROJECT_DIR$/src/main/java/metrics/DepthOfInheritanceTree.java" />
+        <option value="$PROJECT_DIR$/src/main/java/metrics/DirectClassCoupling.java" />
+        <option value="$PROJECT_DIR$/src/main/java/metrics/LackOfCohesionInMethods.java" />
+        <option value="$PROJECT_DIR$/src/main/java/metrics/LinesOfCode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/metrics/McCabeCyclomaticComplexity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/metrics/TightClassCohesion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/GodClassEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/metrics/NumbersOfMethods.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/Utils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/metrics/Metric.java" />
+        <option value="$PROJECT_DIR$/src/test/java/metrics/DITTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/metrics/WeightedMethodCount.java" />
+        <option value="$PROJECT_DIR$/src/main/java/metrics/NumberofAttributes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/metrics/NumberOfMethods.java" />
       </list>
     </option>
   </component>
@@ -149,7 +149,8 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="960" />
     <option name="width" value="960" />
     <option name="height" value="1040" />
   </component>
@@ -190,6 +191,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codesmell" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HW" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="metrics" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -197,7 +206,53 @@
               <item name="HW" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codesmell" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HW" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codesmell" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HW" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codesmell" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HW" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codesmell" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HW" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="metrics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codesmell" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HW" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="metrics" type="462c0819:PsiDirectoryNode" />
+              <item name="DITTest.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="codesmell" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HW" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="parser" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -238,6 +293,17 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.GodClassParserTest">
+    <configuration name="DITTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="metrics.DITTest" />
+      <module name="HW" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="metrics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="GodClassParserTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="parser.GodClassParserTest" />
       <module name="HW" />
@@ -304,10 +370,12 @@
       <item itemvalue="Application.ProjectParserTest" />
       <item itemvalue="Application.ProjectsParserTest" />
       <item itemvalue="Application.GodClassParserTest" />
+      <item itemvalue="Application.DITTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GodClassParserTest" />
+        <item itemvalue="Application.DITTest" />
         <item itemvalue="Application.ProjectsParserTest" />
         <item itemvalue="Application.ProjectParserTest" />
       </list>
@@ -332,18 +400,18 @@
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Messages" order="3" weight="0.32864866" />
+      <window_info anchor="bottom" id="Messages" order="3" weight="0.32731137" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.31137088" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.5781084" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.13072917" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.14583333" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info id="UI Designer" order="1" />
@@ -360,6 +428,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/visitor.java">
@@ -400,46 +473,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="119" selection-start-line="6" selection-start-column="119" selection-end-line="6" selection-end-column="119" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/SmellEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Entity#0;class#Entity#0" />
-            <element signature="method#getCodeFromFile#0;class#Entity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/parser/GodClassParserTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="90" selection-start-line="8" selection-start-column="90" selection-end-line="8" selection-end-column="90" />
+        <state relative-caret-position="552">
+          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/parser/GodClassParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+        <state relative-caret-position="440">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#GodClassParser#0;class#GodClassParser#0" />
@@ -447,10 +491,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/GodClassEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/parser/GodClassParserTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+        <state relative-caret-position="115">
+          <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="7" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/SmellEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/metrics/CohesionAmongMethodsOfClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="58" column="110" selection-start-line="58" selection-start-column="110" selection-end-line="58" selection-end-column="110" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -459,12 +520,166 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/metrics/AccessToForeignData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        <state relative-caret-position="437">
+          <caret line="22" column="59" lean-forward="true" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#376#377#0" expanded="true" />
+            <element signature="class#AccessToForeignDataVisitor#0" />
+            <element signature="method#AccessToForeignDataVisitor#0;class#AccessToForeignDataVisitor#0" />
+            <element signature="method#isGetterOrSetter#0;class#AccessToForeignDataVisitor#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/metrics/DepthOfInheritanceTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/metrics/LackOfCohesionInMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="39" column="66" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#visitMethods#0;class#LackOfCohesionInMethods#0" />
+            <element signature="method#calculateResult#0;class#LackOfCohesionInMethods#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/metrics/DirectClassCoupling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/metrics/TightClassCohesion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="60" column="46" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#total#0;class#TightClassCohesion#0" />
+            <element signature="method#TightClassCohesionVisitor#0;class#TightClassCohesionVisitor#0" />
+            <element signature="method#getMapOfMethodAndAtrributeBinding#0;class#TightClassCohesionVisitor#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/metrics/LinesOfCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="24" column="58" lean-forward="true" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#LinesOfCode#0;class#LinesOfCode#0" />
+            <element signature="method#calculateNumberOfLines#0;class#LinesOfCode#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/metrics/McCabeCyclomaticComplexity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="method#McCabeCyclomaticComplexity#0;class#McCabeCyclomaticComplexity#0" />
+            <element signature="method#calculate#0;class#McCabeCyclomaticComplexity#0" />
+            <element signature="class#McCabeVisitor#0" />
+            <element signature="method#visit#4;class#McCabeVisitor#0" />
+            <element signature="method#visit#5;class#McCabeVisitor#0" />
+            <element signature="method#visit#6;class#McCabeVisitor#0" />
+            <element signature="method#visit#7;class#McCabeVisitor#0" />
+            <element signature="method#visit#8;class#McCabeVisitor#0" />
+            <element signature="method#visit#9;class#McCabeVisitor#0" />
+            <element signature="method#visit#10;class#McCabeVisitor#0" />
+            <element signature="method#visit#11;class#McCabeVisitor#0" />
+            <element signature="method#visit#12;class#McCabeVisitor#0" />
+            <element signature="method#visit#13;class#McCabeVisitor#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/GodClassEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="31" column="98" lean-forward="true" selection-start-line="31" selection-start-column="98" selection-end-line="31" selection-end-column="98" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#parser#0;class#GodClassEntity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="272" selection-start-line="9" selection-start-column="272" selection-end-line="9" selection-end-column="272" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getSourceTypeNames#0;class#Utils#0" />
+            <element signature="e#804#812#0" expanded="true" />
+            <element signature="e#2326#2336#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/metrics/Metric.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/metrics/WeightedMethodCount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/metrics/DITTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/metrics/NumberofAttributes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#607#615#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/metrics/NumberOfMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#616#624#0" expanded="true" />
+            <element signature="e#681#689#0" expanded="true" />
           </folding>
         </state>
       </provider>

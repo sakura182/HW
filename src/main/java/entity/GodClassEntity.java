@@ -1,41 +1,47 @@
 package entity;
 
-import net.sourceforge.metrics.calculators.AccessToForeignData;
-import net.sourceforge.metrics.core.sources.TypeMetrics;
-import org.eclipse.jdt.core.dom.ASTParser;
-import org.eclipse.jdt.core.dom.CompilationUnit;
-import org.eclipse.jdt.core.dom.ITypeBinding;
-import org.eclipse.jdt.core.dom.TypeDeclaration;
+import metrics.Metric;
+
+import org.eclipse.jdt.core.dom.*;
+import utils.Utils;
 import visitor.GodClassVisitor;
 
 import java.io.*;
+import java.lang.reflect.Constructor;
 
 
 public class GodClassEntity extends SmellEntity{
-    CompilationUnit cu;
+    private CompilationUnit cu;
+    private String[] Metrics;
 
     public GodClassEntity(String path, ASTParser astParser) throws IOException{
         super(path,astParser);
-
-        cu = parser();
+        String code = getCodeFromFile();
+        cu = parser(code);
         GodClassVisitor visitor = new GodClassVisitor();
         cu.accept(visitor);
         for(TypeDeclaration type : visitor.getAllTypes()){
-            ITypeBinding typeBinding = type.resolveBinding();
             try {
-                TypeMetrics tm = new TypeMetrics(type);
-                AccessToForeignData atfd = new AccessToForeignData();
-                atfd.calculate(tm);
-                System.out.println(tm.getValue("ATFD"));
-            }catch(Exception e){
+                for(String metricname : Utils.getGodClassMetrics()) {
+                    Class mc = Class.forName("metrics." + metricname);
+                    Constructor con = mc.getConstructor(type.getClass());
+                    Metric metric = (Metric) con.newInstance(type);
+                    metric.setSourceCode(code);
+                    metric.calculate();
+                    for(String metricName : metric.getMetrics().keySet()){
+                        System.out.println(metricName+"    "+metric.getMetrics().get(metricName));
+                    }
+                }
+                break;
+            }
+            catch(Exception e){
                 e.printStackTrace();
             }
         }
 
     }
 
-    private CompilationUnit parser() throws IOException{
-        String code = getCodeFromFile();
+    private CompilationUnit parser(String code) throws IOException{
         astParser.setSource(code.toCharArray());
         return (CompilationUnit)astParser.createAST(null);
     }

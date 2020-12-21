@@ -15,12 +15,14 @@
             <artifactId>org.eclipse.jdt.core</artifactId>
             <version>3.24.0</version>
         </dependency>
+        <!--
         <dependency>
             <groupId>net.sourceforge</groupId>
             <artifactId>metrics</artifactId>
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/metrics.jar</systemPath>
         </dependency>
+        -->
     </dependencies>
 
 </project>

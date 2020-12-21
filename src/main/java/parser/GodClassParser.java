@@ -27,7 +27,7 @@ public class GodClassParser extends ProjectsParser {
         for(String path : javaFiles){
             ASTParser astParser = Utils.getNewASTParser(sourcepathEntries,encodings,classpathEntries);
             GodClassEntity entity = new GodClassEntity(path, astParser);
-
+            break;
         }
     }
 }

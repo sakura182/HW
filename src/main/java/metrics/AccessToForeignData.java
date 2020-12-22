@@ -17,7 +17,6 @@ public class AccessToForeignData extends Metric {
     public void calculate() {
         ITypeBinding typeBinding = currentClass.resolveBinding();
         if(typeBinding==null) return ;
-        result.put(name,new Double(0.0));
         AccessToForeignDataVisitor visitor = new AccessToForeignDataVisitor(typeBinding);
         currentClass.accept(visitor);
         result.put(name,Double.valueOf(visitor.getAtfd()));

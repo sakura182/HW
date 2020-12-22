@@ -56,7 +56,7 @@ class Visitor extends ASTVisitor{
     }
 
     public boolean visit(MethodDeclaration node){
-        System.out.println("Method: "+node.getName());
+        System.out.println("Method: "+node.toString().replace(node.getBody().toString(),""));
 //        for(Object obj : node.parameters()) if(obj instanceof SingleVariableDeclaration){
 //            SingleVariableDeclaration para = (SingleVariableDeclaration)obj;
 //            System.out.println("Parameter Type: "+para.toString()+" || "+para.getName().toString());

@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.Map;
 
 public class Utils {
-    final static private String[] GodClassMetrics = {"AccessToForeignData","DirectClassCoupling","DepthOfInheritanceTree","TightClassCohesion","LackOfCohesionInMethods","CohesionAmongMethodsOfClass","WeightedMethodCount","LinesOfCode","NumberOfMethods","NumberofAttributes"};
 
     public static ASTParser getNewASTParser(String[] sourcepathEntries, String[] encodings, String[] classpathEntries){
         ASTParser astParser;
@@ -77,8 +76,18 @@ public class Utils {
         return false;
     }
 
-    public static String[] getGodClassMetrics() {
-        return GodClassMetrics;
+    static public <E> HashSet<E> getIntersection(HashSet<E> a, HashSet<E> b){
+        HashSet<E> res = new HashSet<E>();
+        res.addAll(a);
+        res.retainAll(b);
+        return res;
+    }
+
+    static public <E> HashSet<E> getUnion(HashSet<E> a, HashSet<E> b){
+        HashSet<E> res = new HashSet<E>();
+        res.addAll(a);
+        res.addAll(b);
+        return res;
     }
 
 }

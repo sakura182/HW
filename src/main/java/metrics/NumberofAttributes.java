@@ -1,10 +1,7 @@
 package metrics;
 
-import org.eclipse.jdt.core.dom.FieldDeclaration;
-import org.eclipse.jdt.core.dom.Modifier;
-import org.eclipse.jdt.core.dom.TypeDeclaration;
+import org.eclipse.jdt.core.dom.*;
 
-import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 import utils.Utils;
 
 import java.util.ArrayList;

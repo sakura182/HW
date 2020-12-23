@@ -27,6 +27,7 @@ public class GodClassCandidate extends SmellCandidate {
                     break;
                 }
                 features.putAll(metric.getMetrics());
+
             }
         }
         catch(Exception e){

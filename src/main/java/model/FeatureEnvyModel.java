@@ -1,6 +1,5 @@
 package model;
 
-import net.sf.json.JSONObject;
 import org.deeplearning4j.nn.graph.ComputationGraph;
 import org.deeplearning4j.nn.modelimport.keras.KerasModel;
 import org.deeplearning4j.nn.modelimport.keras.exceptions.InvalidKerasConfigurationException;
@@ -17,6 +16,7 @@ public class FeatureEnvyModel extends Model{
 
     public FeatureEnvyModel(String path) {
         graph = null;
+        name = "FeatureEnvyModel";
         try {
             KerasModelBuilder mb = new KerasModel().modelBuilder().modelHdf5Filename(path);
             mb.enforceTrainingConfig(true);
@@ -32,13 +32,6 @@ public class FeatureEnvyModel extends Model{
             System.out.println("The model file doesn't exist. Path: "+path);
             graph = null;
         }
-    }
-
-    private String modifyJSON(String json){
-        JSONObject jsonObject = JSONObject.fromObject(json);
-        if(jsonObject.get("class_name") != null)
-            jsonObject.put("class_name","Model");
-        return jsonObject.toString();
     }
 
 }

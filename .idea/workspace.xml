@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36a8c4bc-f9c4-41a4-b87c-01f743c78ea7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/FeatureEnvyModelTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/GodClassModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/GodClassModelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/candidate/GodClassCandidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/candidate/GodClassCandidate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/metrics/NumberOfMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/metrics/NumberOfMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/metrics/NumberofAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/metrics/NumberofAttributes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/candidate/GodClassCandidate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/candidate/GodClassCandidate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/metrics/NumberOfMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/metrics/NumberOfMethods.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/metrics/NumberofAttributes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/metrics/NumberofAttributes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/FeatureEnvyModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/FeatureEnvyModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/FeatureEnvyModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/FeatureEnvyModelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/FeatureEnvyModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/FeatureEnvyModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/model/FeatureEnvyModelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/model/FeatureEnvyModelTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,7 +25,7 @@
       <file leaf-file-name="DataPreprocess.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/utils/DataPreprocess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
+            <state relative-caret-position="188">
               <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
               <folding>
                 <element signature="method#splitWord#0;class#DataPreprocess#0" />
@@ -38,37 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="GodClassModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/GodClassModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Word2VecModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/Word2VecModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#Word2VecModel#0;class#Word2VecModel#0" />
-                <element signature="method#loadGoogleModel#0;class#Word2VecModel#0" />
-                <element signature="method#readFloat#0;class#Word2VecModel#0" />
-                <element signature="method#getFloat#0;class#Word2VecModel#0" />
-                <element signature="method#readString#0;class#Word2VecModel#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FeatureEnvyModel.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/FeatureEnvyModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="26" column="4" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+            <state relative-caret-position="246">
+              <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,23 +49,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/Model.java">
+      <file leaf-file-name="KerasLSTM.class" pinned="false" current-in-tab="true">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/deeplearning4j/deeplearning4j-modelimport/1.0.0-beta7/deeplearning4j-modelimport-1.0.0-beta7.jar!/org/deeplearning4j/nn/modelimport/keras/layers/recurrent/KerasLSTM.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="342" column="42" lean-forward="true" selection-start-line="342" selection-start-column="42" selection-end-line="342" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GodClassModelTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/model/GodClassModelTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="115">
-              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FeatureEnvyModelTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/model/FeatureEnvyModelTest.java">
+      <file leaf-file-name="FeatureEnvyModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/FeatureEnvyModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="75" lean-forward="true" selection-start-line="4" selection-start-column="75" selection-end-line="4" selection-end-column="75" />
+            <state relative-caret-position="142">
+              <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="41" selection-end-column="5" />
               <folding>
-                <element signature="e#94#95#0" expanded="true" />
-                <element signature="e#156#157#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -170,6 +151,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/model/FeatureEnvyModelTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/FeatureEnvyModel.java" />
+        <option value="$PROJECT_DIR$/src/test/java/model/GodClassModelTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/GodClassModel.java" />
       </list>
     </option>
   </component>
@@ -185,7 +168,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="960" />
     <option name="width" value="960" />
     <option name="height" value="1040" />
@@ -259,22 +242,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="codesmell" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HW" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="codesmell" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HW" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -313,7 +280,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.FeatureEnvyModelTest">
+  <component name="RunManager" selected="Application.GodClassModelTest">
     <configuration name="DataPreprocessTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="utils.DataPreprocessTest" />
       <module name="HW" />
@@ -336,13 +303,13 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="FeatureEnvyParserTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parser.FeatureEnvyParserTest" />
+    <configuration name="GodClassModelTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="model.GodClassModelTest" />
       <module name="HW" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="parser.*" />
+          <option name="PATTERN" value="model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -412,18 +379,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.GodClassParserTest" />
-      <item itemvalue="Application.FeatureEnvyParserTest" />
       <item itemvalue="Application.Word2VecModelTest" />
       <item itemvalue="Application.DataPreprocessTest" />
       <item itemvalue="Application.FeatureEnvyModelTest" />
+      <item itemvalue="Application.GodClassModelTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GodClassModelTest" />
         <item itemvalue="Application.FeatureEnvyModelTest" />
         <item itemvalue="Application.DataPreprocessTest" />
         <item itemvalue="Application.Word2VecModelTest" />
         <item itemvalue="Application.GodClassParserTest" />
-        <item itemvalue="Application.FeatureEnvyParserTest" />
       </list>
     </recent_temporary>
   </component>
@@ -446,18 +413,18 @@
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Messages" order="3" weight="0.33262485" />
+      <window_info anchor="bottom" id="Messages" order="3" weight="0.33049947" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.45377257" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.45377257" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.1734375" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.1734375" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info id="UI Designer" order="1" />
@@ -828,9 +795,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/utils/DataPreprocessTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/model/FeatureEnvyModelTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="84" selection-start-line="5" selection-start-column="84" selection-end-line="5" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/DataPreprocess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
+        <state relative-caret-position="188">
           <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
           <folding>
             <element signature="method#splitWord#0;class#DataPreprocess#0" />
@@ -841,35 +836,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/utils/DataPreprocessTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/model/FeatureEnvyModelTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="75" lean-forward="true" selection-start-line="4" selection-start-column="75" selection-end-line="4" selection-end-column="75" />
-          <folding>
-            <element signature="e#94#95#0" expanded="true" />
-            <element signature="e#156#157#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/Word2VecModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        <state relative-caret-position="41">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Word2VecModel#0;class#Word2VecModel#0" />
@@ -881,20 +851,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/FeatureEnvyModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="26" column="4" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+        <state relative-caret-position="142">
+          <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="41" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/model/GodClassModelTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/GodClassModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/deeplearning4j/deeplearning4j-modelimport/1.0.0-beta7/deeplearning4j-modelimport-1.0.0-beta7.jar!/org/deeplearning4j/nn/modelimport/keras/layers/recurrent/KerasLSTM.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="342" column="42" lean-forward="true" selection-start-line="342" selection-start-column="42" selection-end-line="342" selection-end-column="42" />
         </state>
       </provider>
     </entry>

@@ -16,8 +16,8 @@ public class GodClassCandidate extends SmellCandidate {
         try {
             info.put("Path",path);
             info.put("ClassName",type.getName().toString());
-            for(String metricname : GodClassParser.getGodClassMetrics()) {
-                Class mc = Class.forName("metrics." + metricname);
+            for(String metricName : GodClassParser.getGodClassMetrics()) {
+                Class mc = Class.forName("metrics." + metricName);
                 Constructor con = mc.getConstructor(type.getClass());
                 Metric metric = (Metric) con.newInstance(type);
                 metric.setSourceCode(sourceCode);
@@ -27,7 +27,6 @@ public class GodClassCandidate extends SmellCandidate {
                     break;
                 }
                 features.putAll(metric.getMetrics());
-
             }
         }
         catch(Exception e){

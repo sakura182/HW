@@ -4,6 +4,7 @@ import org.deeplearning4j.nn.graph.ComputationGraph;
 import org.deeplearning4j.nn.modelimport.keras.KerasModel;
 import org.deeplearning4j.nn.modelimport.keras.exceptions.InvalidKerasConfigurationException;
 import org.deeplearning4j.nn.modelimport.keras.utils.KerasModelBuilder;
+import org.nd4j.linalg.api.ndarray.INDArray;
 
 /*
 模型文件是包含结构信息的HDF5文件
@@ -32,6 +33,10 @@ public class FeatureEnvyModel extends Model{
             System.out.println("The model file doesn't exist. Path: "+path);
             graph = null;
         }
+    }
+
+    public INDArray[] predict(INDArray[] input){
+        return graph.output(input);
     }
 
 }

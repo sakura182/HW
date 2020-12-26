@@ -42,7 +42,7 @@ public class FeatureEnvyCandidate extends SmellCandidate{
         sourceClassMetric.calculate();
         HashSet<String> sourceClassEntitySet = (HashSet<String>) sourceClassMetric.getMetrics().get(sourceClassMetric.getName());
 
-        features.put("methodName",method.getName());
+        features.put("methodName",Utils.deleteComments(method.getName().toString()));
         features.put("sourceClassName",sourceClassBinding.getName());
         features.put("sourceDistance", calDistance(Utils.getIntersection(methodEntitySet,sourceClassEntitySet),Utils.getUnion(methodEntitySet,sourceClassEntitySet)));
         info.put("Path",path);
@@ -102,7 +102,7 @@ public class FeatureEnvyCandidate extends SmellCandidate{
             ITypeBinding typeBinding = methodBinding.getDeclaringClass();
             if(typeBinding == null) return true;
             methodEntitySet.add(typeBinding.getQualifiedName()+"."+methodBinding.getName());
-            if(!typeBinding.equals(currentClass)) {
+            if(!typeBinding.equals(currentClass) && typeBinding.isFromSource()) {
                 targetClasses.add(typeBinding);
             }
             return true;
@@ -114,7 +114,7 @@ public class FeatureEnvyCandidate extends SmellCandidate{
             ITypeBinding typeBinding = variableBinding.getDeclaringClass();
             if(typeBinding == null) return true;
             methodEntitySet.add(typeBinding.getQualifiedName()+"."+variableBinding.getName());
-            if(!typeBinding.equals(currentClass))
+            if(!typeBinding.equals(currentClass) && typeBinding.isFromSource())
                 targetClasses.add(typeBinding);
             return true;
         }
@@ -127,7 +127,7 @@ public class FeatureEnvyCandidate extends SmellCandidate{
                     if(typeBinding == null)
                         return true;
                     methodEntitySet.add(typeBinding.getQualifiedName()+"."+variableBinding.getName());
-                    if(!typeBinding.equals(currentClass))
+                    if(!typeBinding.equals(currentClass) && typeBinding.isFromSource())
                         targetClasses.add(typeBinding);
                 }
 

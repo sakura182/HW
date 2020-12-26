@@ -30,7 +30,6 @@ public class DataPreprocess {
         return res;
     }
 
-    //GodClass,词之间用'.'连接
     public static String tokenize(String line){
         String[] splitString = line.split("((?<=\\.)|(?=\\.))| |((?<=\\{)|(?=\\{))|((?<=\\})|(?=\\}))|((?<=\\()|(?=\\())|((?<=\\))|(?=\\)))|((?<=\\[)|(?=\\[))|((?<=\\])|(?=\\]))|((?<=\\;)|(?=\\;))|((?<=\\,)|(?=\\,))|((?<=\\>)|(?=\\>))|((?<=\\<)|(?=\\<))");
         String rline = "";
@@ -64,7 +63,5 @@ public class DataPreprocess {
         rline = rline.replaceAll("  ", " ");
         return rline;
     }
-
-
 
 }

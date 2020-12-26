@@ -3,6 +3,7 @@ package model;
 import org.deeplearning4j.nn.graph.ComputationGraph;
 import org.deeplearning4j.nn.modelimport.keras.KerasModel;
 import org.deeplearning4j.nn.modelimport.keras.utils.KerasModelBuilder;
+import org.nd4j.linalg.api.ndarray.INDArray;
 
 public class GodClassModel extends Model {
     private ComputationGraph graph;
@@ -21,6 +22,10 @@ public class GodClassModel extends Model {
             e.printStackTrace();
             graph = null;
         }
+    }
+
+    public INDArray[] predict(INDArray[] input){
+        return graph.output(input);
     }
 
 }

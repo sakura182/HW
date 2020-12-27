@@ -7,6 +7,7 @@ import model.Word2VecModel;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
 import parser.GodClassParser;
+import utils.Config;
 import utils.DataPreprocess;
 import utils.Utils;
 
@@ -35,7 +36,7 @@ public class GodClassDetector extends AbstractDetector {
             INDArray[] input = preprocess(features);
             INDArray[] output = godClassModel.predict(input);
             double[][] dOutput = output[0].toDoubleMatrix();
-            if(dOutput[0][0] > 0.5) {
+            if(dOutput[0][0] > Config.getGodClassThreshold()) {
                 candidate.addInfo("Probability", "" + dOutput[0][0]);
             }
         }
@@ -58,18 +59,20 @@ public class GodClassDetector extends AbstractDetector {
     }
 
     private float[][] calVec(ArrayList<String> elements){
-        float[][] vec = new float[50][200];
+        int embeddingDimension = Config.getGodClassEmbeddingDimension();
+        int sequenceLength = Config.getGodClassSequenceLength();
+        float[][] vec = new float[sequenceLength][embeddingDimension];
 
-        for(int i=(50-elements.size()<0?0:50-elements.size()),j=0;i<50;i++,j++){
+        for(int i=(sequenceLength-elements.size()<0?0:sequenceLength-elements.size()),j=0;i<sequenceLength;i++,j++){
             String text = DataPreprocess.tokenize(elements.get(j));
             String[] words = text.split(" ");
-            float[] sum = new float[200];
+            float[] sum = new float[embeddingDimension];
             for(String word : words){
                 float[] v = embeddingModel.getWordVector(word);
                 if(v == null) continue;
-                for(int k=0;k<200;k++) sum[k] += v[k];
+                for(int k=0;k<embeddingDimension;k++) sum[k] += v[k];
             }
-            for(int k=0;k<200;k++) sum[k] /= words.length;
+            for(int k=0;k<embeddingDimension;k++) sum[k] /= words.length;
             vec[i] = sum;
         }
         return vec;

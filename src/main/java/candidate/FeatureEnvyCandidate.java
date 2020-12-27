@@ -42,12 +42,17 @@ public class FeatureEnvyCandidate extends SmellCandidate{
         sourceClassMetric.calculate();
         HashSet<String> sourceClassEntitySet = (HashSet<String>) sourceClassMetric.getMetrics().get(sourceClassMetric.getName());
 
-        features.put("methodName",Utils.deleteComments(method.getName().toString()));
+        features.put("methodName",method.getName().toString());
         features.put("sourceClassName",sourceClassBinding.getName());
         features.put("sourceDistance", calDistance(Utils.getIntersection(methodEntitySet,sourceClassEntitySet),Utils.getUnion(methodEntitySet,sourceClassEntitySet)));
         info.put("Path",path);
         info.put("SourceClass",sourceClassBinding.getQualifiedName());
-        info.put("Method",method.toString().replace(method.getBody().toString(),""));
+        String methodDeclarationStament = method.toString().replace(method.getBody().toString(),"");
+        if(method.getJavadoc() != null)
+            methodDeclarationStament = methodDeclarationStament.replace(method.getJavadoc().toString(),"");
+
+        info.put("Method",methodDeclarationStament);
+
 
         ArrayList<String> targetNames = new ArrayList<String>();
         ArrayList<Double> targetDistances = new ArrayList<Double>();

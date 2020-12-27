@@ -6,6 +6,7 @@ import model.Word2VecModel;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
 import parser.FeatureEnvyParser;
+import utils.Config;
 import utils.DataPreprocess;
 
 import java.io.IOException;
@@ -47,14 +48,15 @@ public class FeatureEnvyDetector extends AbstractDetector{
                     pos= i;
                 }
             }
-            if(maxv > 0.6)
+            if(maxv > Config.getFeatureEnvyThreshold())
                 candidate.addInfo("recommend",targetClassNames.get(pos));
         }
     }
 
     private INDArray[] preprocess(String methodName, String sourceClassName, Double sourceDistance, ArrayList<String> targetClassNames, ArrayList<Double> targetDistances){
         int targetsNumber = targetClassNames.size();
-        float[][][] input1 = new float[targetsNumber][15][];
+        int sequenceLength = Config.getFeatureEnvySequenceLength();
+        float[][][] input1 = new float[targetsNumber][sequenceLength * 3][];
         float[][][] input2 = new float[targetsNumber][2][1];
 
         float[][] methodVec = word2vec(methodName);
@@ -63,9 +65,9 @@ public class FeatureEnvyDetector extends AbstractDetector{
         for(int i=0;i<targetsNumber;i++){
             String targetSimpleName = getSimpleName(targetClassNames.get(i));
             float[][] targetClassVec = word2vec(targetSimpleName);
-            for(int j=0;j<5;j++) input1[i][j] = methodVec[j];
-            for(int j=5;j<10;j++) input1[i][j] = sourceClassVec[j-5];
-            for(int j=10;j<15;j++) input1[i][j] = targetClassVec[j-10];
+            for(int j=0;j<sequenceLength;j++) input1[i][j] = methodVec[j];
+            for(int j=sequenceLength;j<2*sequenceLength;j++) input1[i][j] = sourceClassVec[j-sequenceLength];
+            for(int j=2*sequenceLength;j<3*sequenceLength;j++) input1[i][j] = targetClassVec[j-2*sequenceLength];
             input2[i][0][0] = (float)sourceDistance.doubleValue();
             input2[i][1][0] = (float)targetDistances.get(i).doubleValue();
         }
@@ -79,11 +81,11 @@ public class FeatureEnvyDetector extends AbstractDetector{
 
     private float[][] word2vec(String name){
         ArrayList<String> words = DataPreprocess.splitWord(name);
-        words = DataPreprocess.fixWordsSize(words,5,"*");
+        words = DataPreprocess.fixWordsSize(words,Config.getFeatureEnvySequenceLength(),"*");
         float[][] vec = new float[words.size()][];
         for(int i=0;i<words.size();i++){
             vec[i] = embeddingModel.getWordVector(words.get(i));
-            if(vec[i] == null) vec[i] = new float[200];
+            if(vec[i] == null) vec[i] = new float[Config.getFeatureEnvyEmbeddingDimension()];
         }
 
         return vec;

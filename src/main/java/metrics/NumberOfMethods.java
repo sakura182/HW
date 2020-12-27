@@ -24,7 +24,7 @@ public class NumberOfMethods extends Metric{
         MethodDeclaration[] methods = currentClass.getMethods();
 
         for(MethodDeclaration method : methods) if(!Utils.isStatic(method)){
-            methodsName.add(Utils.deleteComments(method.getName().toString()));
+            methodsName.add(method.getName().toString());
             nom++;
             String methodName = method.getName().toString();
             if(methodName.startsWith("set")||methodName.startsWith("get"))

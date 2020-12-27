@@ -90,10 +90,4 @@ public class Utils {
         return res;
     }
 
-    public static String deleteComments(String name){
-        name = name.replaceAll("/\\*(.|[\\r\\n])*?\\*/","");
-        name = name.replaceAll("//.*[\n\r]","");
-        return name;
-    }
-
 }

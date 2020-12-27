@@ -43,15 +43,19 @@ class Visitor extends ASTVisitor{
     }
 
     public boolean visit(FieldDeclaration node){
-        VariableDeclarationFragment f = (VariableDeclarationFragment)node.fragments().get(0);
-        System.out.println("Filed: "+f.getName());
-        ITypeBinding typeBinding = f.resolveBinding().getType();
-        System.out.println(typeBinding.getQualifiedName()+"  "+typeBinding.isFromSource());
+//        VariableDeclarationFragment f = (VariableDeclarationFragment)node.fragments().get(0);
+//        System.out.println("Filed: "+f.getName());
+//        ITypeBinding typeBinding = f.resolveBinding().getType();
+//        System.out.println(typeBinding.getQualifiedName()+"  "+typeBinding.isFromSource());
         return true;
     }
 
     public boolean visit(MethodDeclaration node){
         System.out.println("Method: "+node.toString().replace(node.getBody().toString(),""));
+        String code = node.toString().replace(node.getBody().toString(),"");
+        if(node.getJavadoc() != null)
+            code = code.replace(node.getJavadoc().toString(),"");
+        System.out.println(code);
 
         return true;
     }

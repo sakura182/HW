@@ -12,7 +12,6 @@ public class FeatureEnvyDetectorTest {
             String embeddingModelPath = "D:\\huawei\\HW\\bin2vec\\src\\test\\java\\resources\\new.bin";
             FeatureEnvyDetector featureEnvyDetector = new FeatureEnvyDetector(sourceFilePaths,encodings,classPaths,nnModelPath,embeddingModelPath);
             featureEnvyDetector.detect();
-            //还需要讲候选目标类中的非本项目类筛选掉
             featureEnvyDetector.displayResult();
         }catch(Exception e){
             e.printStackTrace();

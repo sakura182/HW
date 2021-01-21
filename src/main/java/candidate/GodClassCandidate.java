@@ -5,9 +5,10 @@ import metrics.Metric;
 import org.eclipse.jdt.core.dom.*;
 import parser.GodClassParser;
 
+import java.io.Serializable;
 import java.lang.reflect.Constructor;
 
-public class GodClassCandidate extends SmellCandidate {
+public class GodClassCandidate extends SmellCandidate implements Serializable {
     private boolean valid;
 
     public GodClassCandidate(TypeDeclaration type, String sourceCode, String path){

@@ -9,10 +9,11 @@ public class GodClassDetectorTest {
             String[] sourceFilePaths={"D:\\huawei\\HW\\testproject\\grinder-3.6\\src\\"};
             String[] encodings={"UTF-8"};
             String[] classPaths={"D:\\huawei\\HW\\testproject\\grinder-3.6\\lib\\"};
-            String nnModelPath = "D:\\huawei\\HW\\GodClassModel.h5";
-            String embeddingModelPath = "D:\\huawei\\HW\\bin2vec\\src\\test\\java\\resources\\new.bin";
+            //String nnModelPath = "D:\\huawei\\HW\\GodClassModel.h5";
+            //String embeddingModelPath = "D:\\huawei\\HW\\bin2vec\\src\\test\\java\\resources\\new.bin";
+            String hostIp="localhost";
             long t1 = System.currentTimeMillis();
-            GodClassDetector featureEnvyDetector = new GodClassDetector(sourceFilePaths,encodings,classPaths,nnModelPath,embeddingModelPath);
+            GodClassDetector featureEnvyDetector = new GodClassDetector(sourceFilePaths,encodings,classPaths,hostIp);
             featureEnvyDetector.detect();
             //还需要讲候选目标类中的非本项目类筛选掉
             featureEnvyDetector.displayResult();

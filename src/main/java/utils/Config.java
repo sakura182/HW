@@ -38,5 +38,22 @@ public class Config {
     public static double getGodClassThreshold(){
         return Double.valueOf(properties.getProperty("GodClassThreshold")).doubleValue();
     }
-
+    public static String getDriver(){
+        return String.valueOf(properties.getProperty("driver"));
+    }
+    public static String getURL(){
+        return String.valueOf(properties.getProperty("url"));
+    }
+    public static String getUsername(){
+        return String.valueOf(properties.getProperty("username"));
+    }
+    public static String getPassword(){
+        return String.valueOf(properties.getProperty("password"));
+    }
+    public static String getMaxPoolSize(){
+        return String.valueOf(properties.getProperty("maxPoolSize"));
+    }
+    public static String getInitialPoolSize(){
+        return String.valueOf(properties.getProperty("initialPoolSize"));
+    }
 }

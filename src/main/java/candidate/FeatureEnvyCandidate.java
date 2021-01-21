@@ -4,11 +4,12 @@ import metrics.TypeEntitySet;
 import org.eclipse.jdt.core.dom.*;
 import utils.Utils;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 
 
-public class FeatureEnvyCandidate extends SmellCandidate{
+public class FeatureEnvyCandidate extends SmellCandidate implements Serializable {
     private MethodDeclaration method;
     private HashSet<String> methodEntitySet;
     private ITypeBinding sourceClassBinding;

@@ -1,12 +1,13 @@
 package candidate;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 /*
 features：候选实体的所有初始特征
 info：候选实体的相关信息
  */
-public abstract class SmellCandidate {
+public abstract class SmellCandidate implements Serializable {
     protected HashMap<String,Object> features;
     protected HashMap<String,String> info;
 

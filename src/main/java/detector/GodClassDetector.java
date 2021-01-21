@@ -1,6 +1,8 @@
 package detector;
 
+import RemoteModel.IRemoteModel;
 import candidate.GodClassCandidate;
+import com.csvreader.CsvWriter;
 import com.sun.xml.internal.fastinfoset.algorithm.FloatEncodingAlgorithm;
 import model.GodClassModel;
 import model.Word2VecModel;
@@ -9,20 +11,34 @@ import org.nd4j.linalg.factory.Nd4j;
 import parser.GodClassParser;
 import utils.Config;
 import utils.DataPreprocess;
+import utils.JdbcUtil;
 import utils.Utils;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.rmi.NotBoundException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GodClassDetector extends AbstractDetector {
-    private Word2VecModel embeddingModel;
+    //private Word2VecModel embeddingModel;
     private ArrayList<GodClassCandidate> candidates;
+    private IRemoteModel remoteMath ;
     private String[] metrics = new String[] {"ATFD","DCC","DIT","TCC","LCOM","CAM","WMC","LOC","NOPA","NOAM","NOA","NOM"};
-
+/*
     public GodClassDetector(String[] sourceFilePaths, String[] encodings, String[] classPaths, String nnModelPath, String embeddingModelPath) throws IOException {
-        super(sourceFilePaths,encodings,classPaths,nnModelPath);
+        super(sourceFilePaths,encodings,classPaths);
         embeddingModel = new Word2VecModel(embeddingModelPath);
+    }*/
+    public GodClassDetector(String[] sourceFilePaths, String[] encodings, String[] classPaths, String hostIp) throws IOException, NotBoundException {
+        super(sourceFilePaths,encodings,classPaths);
+        Registry registry = LocateRegistry.getRegistry(hostIp);
+        remoteMath = (IRemoteModel)registry.lookup("Compute");
+
     }
 
     public void detect() throws IOException {
@@ -30,53 +46,22 @@ public class GodClassDetector extends AbstractDetector {
         parser.parse();
         candidates = parser.getGodClassCandidates();
 
-        GodClassModel godClassModel = new GodClassModel(nnModelPath);
-        for(GodClassCandidate candidate : candidates){
+        //GodClassModel godClassModel = new GodClassModel("D:\\\\TSE\\\\Resources\\\\HW\\\\FeatureEnvyModel.h5");
+        /*for(GodClassCandidate candidate : candidates){
             HashMap<String,Object> features = candidate.getFeatures();
-            INDArray[] input = preprocess(features);
-            INDArray[] output = godClassModel.predict(input);
+            //INDArray[] input = preprocess(features);
+            //INDArray[] output = godClassModel.predict(input);
+            INDArray[] output = remoteMath.GodClass_predict(features);
             double[][] dOutput = output[0].toDoubleMatrix();
             if(dOutput[0][0] > Config.getGodClassThreshold()) {
                 candidate.addInfo("Probability", "" + dOutput[0][0]);
             }
-        }
+        }*/
+        ArrayList<String> res=remoteMath.GodClass_detect(candidates);
+        System.out.println(res);
     }
 
-    private INDArray[] preprocess(HashMap<String,Object> features){
-        float[][][] input1 = new float[1][][];
-        float[][] input2 = new float[1][metrics.length];
 
-        for(int i=0;i<metrics.length;i++){
-            input2[0][i] = ((Double)features.get(metrics[i])).floatValue();
-        }
-
-        ArrayList<String> attributes = (ArrayList<String>)features.get("Attributes");
-        ArrayList<String> methods = (ArrayList<String>)features.get("Methods");
-        attributes.addAll(methods);
-        input1[0] = calVec(attributes);
-
-        return new INDArray[] {Nd4j.create(input1),Nd4j.create(input2)};
-    }
-
-    private float[][] calVec(ArrayList<String> elements){
-        int embeddingDimension = Config.getGodClassEmbeddingDimension();
-        int sequenceLength = Config.getGodClassSequenceLength();
-        float[][] vec = new float[sequenceLength][embeddingDimension];
-
-        for(int i=(sequenceLength-elements.size()<0?0:sequenceLength-elements.size()),j=0;i<sequenceLength;i++,j++){
-            String text = DataPreprocess.tokenize(elements.get(j));
-            String[] words = text.split(" ");
-            float[] sum = new float[embeddingDimension];
-            for(String word : words){
-                float[] v = embeddingModel.getWordVector(word);
-                if(v == null) continue;
-                for(int k=0;k<embeddingDimension;k++) sum[k] += v[k];
-            }
-            for(int k=0;k<embeddingDimension;k++) sum[k] /= words.length;
-            vec[i] = sum;
-        }
-        return vec;
-    }
 
     public void displayResult(){
         for(GodClassCandidate candidate : candidates){
@@ -85,6 +70,38 @@ public class GodClassDetector extends AbstractDetector {
             if(probability == null) continue;
             System.out.println(info.get("Path")+"||"+info.get("ClassName")+"||"+probability);
         }
+    }
+    public void displayText(String path){
+        try{
+            CsvWriter csvwriter = new CsvWriter(path,',', Charset.forName("UTF-8"));
+            String[] csvHeaders = {"Class Path","ClassName","Probability"};
+            csvwriter.writeRecord(csvHeaders);
+            for(GodClassCandidate candidate : candidates){
+                HashMap<String,String> info = candidate.getInfo();
+                String probability = info.get("Probability");
+                if(probability == null) continue;
+                String[] csvContent = {info.get("Path"),info.get("ClassName"),probability};
+                csvwriter.writeRecord(csvContent);
+
+            }
+            csvwriter.close();
+            System.out.println("------write finished---------");
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+    }
+    public void saveToDataBase() {
+        JdbcUtil conn = null;
+        conn.getConn();
+        for(GodClassCandidate candidate : candidates){
+            HashMap<String,String> info = candidate.getInfo();
+            String probability = info.get("Probability");
+            if(probability == null) continue;
+            conn.add2(info.get("Path"),info.get("ClassName"),probability);
+        }
+        conn.close();
     }
 
 }

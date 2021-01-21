@@ -17,6 +17,12 @@ public class FeatureEnvyDetectorTest {
             //featureEnvyDetector.displayResult();
             //featureEnvyDetector.displayText("D:\\result.csv");
             //featureEnvyDetector.saveToDataBase();
+            String[] classPaths={"D:\\huawei\\HW\\testproject\\grinder-3.6\\lib\\"};
+            String nnModelPath = "D:\\huawei\\HW\\FeatureEnvyModel.h5";
+            String embeddingModelPath = "D:\\huawei\\HW\\bin2vec\\src\\test\\java\\resources\\new.bin";
+            FeatureEnvyDetector featureEnvyDetector = new FeatureEnvyDetector(sourceFilePaths,encodings,classPaths,nnModelPath,embeddingModelPath);
+            featureEnvyDetector.detect();
+            featureEnvyDetector.displayResult();
         }catch(Exception e){
             e.printStackTrace();
         }
